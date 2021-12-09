@@ -19,13 +19,24 @@ const addNewNote = (text ="") => {
   note.classList.add("note");
 
   const htmlData = `
-<div class="operation">
-    <button class="edit btn btn-warning" id="edit"><i class="fas fa-edit"></i></button>
-    <button class="delete2 btn btn-danger" id="delete2"><i class="far fa-trash-alt"></i></button>
+  <div class="card shadow-lg p-3 mb-5 bg-body rounded border border-danger" class="note" style="width: 15rem;padding: 10px;margin: 10px;">
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    Note
+    <span class="visually-hidden">unread messages</span>
+  </span>
+  <img src="https://source.unsplash.com/100x100/?books" class="card-img-top" alt="...">
+  <div class="card-body" class="operation">
+      <button class="edit btn btn-success" id="edit"><i class="fas fa-edit">Edit</i></button>
+      <button class="delete2 btn btn-warning" id="delete2"><i class="far fa-trash-alt">Delete</i></button>
+  </div>
+  <div class="main ${text ?" ":"hidden"}"></div>
+  <div class="input-group">
+  <textarea class="form-control ${text ?"hidden":" "}" aria-label="With textarea"></textarea>
 </div>
-<div class="main ${text ?" ":"hidden"}"></div>
-<textarea class="${text ?"hidden":" "}" name="" ></textarea>
+</div>
 `;
+
+
 note.insertAdjacentHTML('afterbegin',htmlData);
 
 //gettting referances  
