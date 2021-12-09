@@ -20,10 +20,7 @@ const addNewNote = (text ="") => {
 
   const htmlData = `
   <div class="card shadow-lg p-3 mb-5 bg-body rounded border border-danger" class="note" style="width: 15rem;padding: 10px;margin: 10px;">
-  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-    Note
-    <span class="visually-hidden">unread messages</span>
-  </span>
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">Note</span>
   <img src="https://source.unsplash.com/100x100/?books" class="card-img-top" alt="...">
   <div class="card-body" class="operation">
       <button class="edit btn btn-success" id="edit"><i class="fas fa-edit">Edit</i></button>
@@ -35,16 +32,12 @@ const addNewNote = (text ="") => {
 </div>
 </div>
 `;
-
-
 note.insertAdjacentHTML('afterbegin',htmlData);
-
 //gettting referances  
 const editbtn = note.querySelector('#edit');
 const deltbtn = note.querySelector('#delete2');
 const maindiv = note.querySelector('.main');
 const textarea = note.querySelector('textarea');
-
 //deleting the node
 deltbtn.addEventListener('click',()=>{
     note.remove();
